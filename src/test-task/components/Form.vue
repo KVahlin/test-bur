@@ -96,10 +96,15 @@ export default {
                 dataMonth: this.dataMonth
             }
 
-            //  Фактически, проверка на корректность ввода числа с точкой осуществляется на уровне ввода значения в компоненте <el-input-number
-            //  Для полной уверенности добавим  приведение к float
+            //  Основная валидация на входе в компоненте el-input-number
+            //  Дополнительная валидация
             for(let key in record.dataMonth) {
-                record.dataMonth[key].passage = parseFloat(record.dataMonth[key].passage)
+                let passage = record.dataMonth[key].passage
+                if(!passage) {
+                    record.dataMonth[key].passage = 0
+                } else {
+                    record.dataMonth[key].passage = parseFloat(passage)
+                }
             }
             
             updateRecord(this.id, record).then(() =>   {
@@ -121,6 +126,18 @@ export default {
                 drilling: this.drilling,
                 dataMonth: this.dataMonth
             }
+
+            //  Основная валидация на входе в компоненте el-input-number
+            //  Дополнительная валидация
+            for(let key in record.dataMonth) {
+                let passage = record.dataMonth[key].passage
+                if(!passage) {
+                    record.dataMonth[key].passage = 0
+                } else {
+                    record.dataMonth[key].passage = parseFloat(passage)
+                }
+            }
+
             saveRecord(record).then(() =>   {
                 this.$message({
                     message: 'Запись успешно создана.',
