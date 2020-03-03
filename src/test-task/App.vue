@@ -234,7 +234,6 @@ export default {
             })
         },
         editRecord(index){
-            console.log('Редактирование ', index)
             this.sliceToEdit = this.yearData[index]
             this.dialogVisible = true
         },
@@ -284,7 +283,13 @@ export default {
                     },
                     sum: function(){
                         return Math.round(item.dataMonth.reduce((accumulator, currentMonth) => {
-                            return accumulator + parseFloat(currentMonth.passage)
+                            let passage = currentMonth.passage
+                            if(!passage) {
+                                return accumulator
+                            } else {
+                               return accumulator  + parseFloat(currentMonth.passage)  
+                            }
+                            
                         },0))
                     }
                 }
