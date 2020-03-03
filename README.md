@@ -1,24 +1,14 @@
-# test-task
 
-## Project setup
-```
-npm install
-```
+# Общее
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Развернуть проект по инструкции не удалось. Вероятно, разные версии/конфиги vue-cli. Можно воспользоваться только папкой src.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# Комментарии по технической части
+- В некоторых местах используется библиотека Elemen Ui для упрощения рутинных задач.
+- Бандл собирается вместе с vue и всем необходимым
+- Запросы к серверу - axios
+- Где-то используются подключенные в шаблоне классы bootstrap
 
-### Lints and fixes files
-```
-npm run lint
-```
+# Замечание
+запрос на создание новой записи всегда выдаёт 500 ошибку.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,0 +1,26 @@
+LANDING URL: http://task.skazkasoft.com/
+Необходимые данные находятся в глобальной переменной vueData
+
+
+API URI: http://task.skazkasoft.com/api/test-task
+
+// Получение данных за год
+GET /api/test-task?year={year}
+
+// Изменение строки
+PUT /api/test-task/item?id={id}
+{"id":1,"year":2019,"region":1,"customer":6,"drilling":1,"dataMonth":[{"id":1,"pp_id":1,"month":1,"passage":"0",},{"id":2,"pp_id":1,"month":2,"passage":"4541"},{"id":3,"pp_id":1,"month":3,"passage":"4430"},{"id":4,"pp_id":1,"month":4,"passage":"5447"},{"id":5,"pp_id":1,"month":5,"passage":"7108"},{"id":6,"pp_id":1,"month":6,"passage":"4680"}]}
+В случае успеха будет возвращён пустой массив, либо же объект с ошибками
+
+// Создание строки
+POST /api/test-task
+{"year":2019,"region":1,"customer":6,"drilling":1,"dataMonth":[{"month":1,"passage":"0"},{"month":2,"passage":"4541"},{"month":3,"passage":"4430"},{"month":4,"passage":"5447"},{"month":5,"passage":"7108"},{"month":6,"passage":"4680"}]}
+В случае успеха будет возвращён созданный объект, либо же объект с ошибками
+
+// Удаление строки
+DELETE /api/test-task/item?id={id}
+
+region — id филиала
+customer — id заказчика
+drilling — id буровой установки
+passage — месячная проходка
