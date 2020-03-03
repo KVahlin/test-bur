@@ -1,7 +1,6 @@
 LANDING URL: http://task.skazkasoft.com/
 Необходимые данные находятся в глобальной переменной vueData
 
-
 API URI: http://task.skazkasoft.com/api/test-task
 
 // Получение данных за год
